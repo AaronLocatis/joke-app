@@ -2,12 +2,48 @@ body {
     background-color: yellow;
     font-family: 'Limelight', cursive;
     color: black;
+    background-image: url("https://www.pngkey.com/png/full/41-416179_top-simpsons-episodes-homer-simpson-donuts-los-simpson.png"), url("https://www.pngplay.com/wp-content/uploads/10/The-Simpsons-No-Background.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left, top right;
+    background-attachment: fixed, fixed;
 }
 
+
+
 .text {
+    min-height: 250px;
+}
+
+.text2 {
     min-height: 100px;
 }
 
 .h1-increase {
     font-size: 100px;
+}
+
+.links {
+    color: red;
+    text-decoration: none;
+}
+
+.joke {
+    position: relative;
+}
+
+.button {
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {
+    height: 150px;
 }

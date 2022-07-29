@@ -14,7 +14,8 @@ export default function useAxios(url) {
             setData(null);
             setError(null);
             try {
-                const response = await axios.get(baseUrl, { headers: { "Accept": "application/json" } });
+                console.log(url);
+                const response = await axios.get(baseUrl + url, { headers: { "Accept": "application/json" } });
                 console.log(response.data.results[0]);
                 setData(
                     response.data.results
