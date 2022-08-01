@@ -22,7 +22,7 @@
 //     }, [setFavorites]);
 
 //     return (
-//         <FavoritesContext.Provider value={{ favorites, add, remove, clear }}>
+//         <FavoritesContext.Provider value={{ favorites }}>
 //             {props.children}
 //         </FavoritesContext.Provider>
 //     );

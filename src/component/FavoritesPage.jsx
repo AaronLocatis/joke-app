@@ -1,44 +1,41 @@
-// import React, { useContext } from "react";
-// import { FavoritesContext } from "../context/FavoritesContext";
-// import { UserContext } from "../context/UserContext";
-// import GifDisplay from "./GifDisplay";
+import React, { useContext } from "react";
+import { FavoritesContext } from "../context/FavoritesContext";
+import JokeDisplay from "./JokeDisplay";
 
-// function FavoritesPage() {
-//     const { favorites, add, remove } = useContext(FavoritesContext);
-//     const { loggedInUser } = useContext(UserContext);
-//     return (
-//         <div className="d-flex flex-wrap justify-content-center">
-//             <h1 className="my-4 col-12 text-center">Favorites for {loggedInUser}</h1>
+function FavoritesPage() {
+    const { favorites, } = useContext(FavoritesContext);
 
-//             <div className="col-12 d-flex flex-wrap mt-4">
-//                 {favorites &&
-//                     favorites.length > 0 &&
-//                     favorites.map((j) => (
-//                         <JokeDisplay
-//                             joke={j}
-//                             key={j.joke_id}
-//                             add={add}
-//                             remove={remove}
-//                             isFavorite={true}
-//                         />
-//                     ))}
-//                 {favorites.length === 0 && (
-//                     <h3 className="text-center col-12">
-//                         No Favorites. Go Back To Search And Add Some!
-//                     </h3>
-//                 )}
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default FavoritesPage;
-import React from 'react'
-
-const FavoritesPage = () => {
     return (
-        <div>FavoritesPage</div>
-    )
+        <>
+            <h1 className="">Favorites</h1>
+
+            {/* <div className="d-grid gap-5 col-6 margin-left">
+                {favorites &&
+                    favorites.length > 0 &&
+                    favorites.map((val) =>
+                        <JokeDisplay
+                            joke={val}
+                            isFavorite={true}
+                        />
+                    )}
+                {favorites.length === 0 && (
+                    <h3 className="text-center">
+                        No Favorites. Go Back To Search And Add Some!
+                    </h3>
+                )}
+            </div> */}
+
+        </>
+    );
 }
 
-export default FavoritesPage
+export default FavoritesPage;
+// import React from 'react'
+
+// const FavoritesPage = () => {
+//     return (
+//         <div>FavoritesPage</div>
+//     )
+// }
+
+// export default FavoritesPage

@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo, useContext, } from 'react'
 import useAxios from "../hooks/useAxios";
 import useAxiosRan from "../hooks/useAxiosRan";
+// import { FavoritesContext } from "../context/FavoritesContext";
+// import JokeDisplay from "./JokeDisplay";
+// import { SearchContext } from "../context/SearchContext";
 
 function SearchPage() {
     const [search, setSearch] = useState("");
@@ -9,9 +12,18 @@ function SearchPage() {
     const [ranUrl, setRanUrl] = useState("");
     const { ranData } = useAxiosRan(ranUrl);
     const [random, setRandom] = useState("");
+    // const { searchResults, setSearchResults } = useContext(SearchContext);
+    // const { favorites, add, remove } = useContext(FavoritesContext);
+    // const faveIDs = useMemo(
+    //     () => favorites.map((val) => val.joke_id),
+    // );
+
+
+
 
 
     return (
+
         <>
 
             <div className="d-grid gap-2 col-6 mx-auto">
@@ -47,7 +59,7 @@ function SearchPage() {
                     onKeyUp={(e) => {
                         console.log(e.key)
                         if (e.key === "Enter") {
-                            setRanUrl(random);
+                            setRanUrl("term=" + random);
                             console.log(e)
                         }
                     }}
@@ -66,25 +78,26 @@ function SearchPage() {
                             )
                         }
                     )}
-                </div>
-                {/* <div className="d-grid gap-2 col-6 mx-auto">
-                    {error && error}
-                    {searchResults &&
-                        searchResults.length > 0 &&
-                        searchResults.map((j) => (
-                            <JokeDisplay
-                                joke={j}
-                                key={j.joke_id}
-                                add={add}
-                                remove={remove}
-                                isFavorite={faveIDs.includes(j.joke_id)}
-                            />
-                        ))}; */}
 
+                    {/* <div className="d-grid gap-2 col-6 mx-auto">
+
+                        {searchResults &&
+                            searchResults.length > 0 &&
+                            searchResults.map((val) => (
+                                <JokeDisplay
+                                    joke={val}
+                                    // key={j.joke_id}
+                                    add={add}
+                                    remove={remove}
+                                    isFavorite={faveIDs.includes(val.joke_id)}
+                                />
+                            ))};
+                    </div> */}
+                </div>
             </div>
         </>
     );
 
-}
+};
 
 export default SearchPage;
