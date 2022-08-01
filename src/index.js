@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { SearchProvider } from "./context/SearchContext";
+import { FavoritesProvider } from './context/FavoritesContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <SearchProvider>
-    <App />
-  </SearchProvider>
+  <FavoritesProvider>
+    <SearchProvider>
+      <App />
+    </SearchProvider>
+  </FavoritesProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

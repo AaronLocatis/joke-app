@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useContext, } from 'react'
 import useAxios from "../hooks/useAxios";
 import useAxiosRan from "../hooks/useAxiosRan";
-// import { FavoritesContext } from "../context/FavoritesContext";
-// import JokeDisplay from "./JokeDisplay";
-// import { SearchContext } from "../context/SearchContext";
+import { FavoritesContext } from "../context/FavoritesContext";
+import JokeDisplay from "./JokeDisplay";
+import { SearchContext } from "../context/SearchContext";
 
 function SearchPage() {
     const [search, setSearch] = useState("");
@@ -12,11 +12,11 @@ function SearchPage() {
     const [ranUrl, setRanUrl] = useState("");
     const { ranData } = useAxiosRan(ranUrl);
     const [random, setRandom] = useState("");
-    // const { searchResults, setSearchResults } = useContext(SearchContext);
-    // const { favorites, add, remove } = useContext(FavoritesContext);
-    // const faveIDs = useMemo(
-    //     () => favorites.map((val) => val.joke_id),
-    // );
+    const { searchResults, } = useContext(SearchContext);
+    const { favorites, add, remove } = useContext(FavoritesContext);
+    const faveIDs = useMemo(
+        () => favorites.map((val) => val.joke_id),
+    );
 
 
 
@@ -79,7 +79,7 @@ function SearchPage() {
                         }
                     )}
 
-                    {/* <div className="d-grid gap-2 col-6 mx-auto">
+                    <div className="d-grid gap-2 col-6 mx-auto">
 
                         {searchResults &&
                             searchResults.length > 0 &&
@@ -92,7 +92,7 @@ function SearchPage() {
                                     isFavorite={faveIDs.includes(val.joke_id)}
                                 />
                             ))};
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </>
