@@ -72,9 +72,8 @@ function SearchPage() {
                     {ranData && ranData.map(
                         (val) => {
                             return (
-                                <div key={val.id}>
-                                    {val.joke}
-                                </div>
+                                <JokeDisplay key={val.joke}></JokeDisplay>
+
                             )
                         }
                     )}
@@ -86,7 +85,7 @@ function SearchPage() {
                             searchResults.map((val) => (
                                 <JokeDisplay
                                     joke={val}
-                                    // key={j.joke_id}
+                                    key={val.joke_id}
                                     add={add}
                                     remove={remove}
                                     isFavorite={faveIDs.includes(val.joke_id)}

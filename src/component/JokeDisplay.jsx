@@ -1,11 +1,10 @@
 import React from "react";
 
 function JokeDisplay({ joke, isFavorite, add, remove }) {
-    const { joke_id, title, url } = joke;
+    const { joke_id, joke_text } = joke;
     return (
-        <div className="gif my-4 px-2 col-6 col-md-4 col-lg-3 d-flex flex-column justify-content-between">
-            <h5 className="text-center">{title}</h5>
-            <img className="img-fluid" src={url} alt={title} />
+        <>
+            <h5 className="text-center">{joke_text}</h5>
             {isFavorite && (
                 <button
                     onClick={() => remove(joke_id)}
@@ -22,7 +21,7 @@ function JokeDisplay({ joke, isFavorite, add, remove }) {
                     Add Favorite
                 </button>
             )}
-        </div>
+        </>
     );
 }
 
