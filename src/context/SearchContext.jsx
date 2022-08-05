@@ -6,7 +6,7 @@ export function SearchProvider(props) {
     const [searchResults, setSearchResults] = useState([]);
 
     return (
-        <SearchContext.Provider value={(searchResults, setSearchResults)}>
+        <SearchContext.Provider value={{ searchResults, setSearchResults }}>
             {props.children}
         </SearchContext.Provider>
     );

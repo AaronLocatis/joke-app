@@ -22,9 +22,13 @@ function EnterPage() {
                     }>
                     Click Here For Other Jokes
                 </button>
-
-
             </div>
+            <div className="picture">
+                <img src="https://www.freeiconspng.com/thumbs/bart-simpson-png/bart-simpson-png-16.png"></img>
+            </div>
+
+
+
         </>
     )
 }

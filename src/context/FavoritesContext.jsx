@@ -12,7 +12,7 @@ export function FavoritesProvider(props) {
 
     const remove = useCallback(
         (id) => {
-            setFavorites((curr) => curr.filter((val) => val.joke_id !== id));
+            setFavorites((curr) => curr.filter((val) => val.id !== id));
         },
         [setFavorites]
     );
@@ -22,7 +22,7 @@ export function FavoritesProvider(props) {
     }, [setFavorites]);
 
     return (
-        <FavoritesContext.Provider value={{ favorites }}>
+        <FavoritesContext.Provider value={{ favorites, add, remove, clear }}>
             {props.children}
         </FavoritesContext.Provider>
     );

@@ -1,13 +1,14 @@
 import React from "react";
 
 function JokeDisplay({ joke, isFavorite, add, remove }) {
-    const { joke_id, joke_text } = joke;
+
     return (
-        <>
-            <h5 className="text-center">{joke_text}</h5>
+        <div className="text3">
+
+            <h5 className="text3">{joke.joke}</h5>
             {isFavorite && (
                 <button
-                    onClick={() => remove(joke_id)}
+                    onClick={() => remove(joke)}
                     className="mt-4 btn btn-danger d-block mx-auto"
                 >
                     Remove Favorite
@@ -16,12 +17,12 @@ function JokeDisplay({ joke, isFavorite, add, remove }) {
             {!isFavorite && (
                 <button
                     onClick={() => add(joke)}
-                    className="mt-4 btn btn-success d-block mx-auto"
+                    className="mt-4 btn btn-success text3 d-block mx-auto"
                 >
                     Add Favorite
                 </button>
             )}
-        </>
+        </div>
     );
 }
 

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { FavoritesContext } from "../context/FavoritesContext";
+import { SearchContext } from "../context/SearchContext";
 
 
-const Menu = () => {
-
+function Menu() {
+    const { setSearchResults } = useContext(SearchContext);
+    const { clear } = useContext(FavoritesContext);
     return (
         <header className="navbar navbar-expand-lg">
             <div className="container-fluid">
@@ -26,6 +29,16 @@ const Menu = () => {
                         <h3>Home</h3>
                     </NavLink>
                 </div>
+                <div className="nav-item">
+                    <NavLink
+                        onClick={() => {
+                            clear();
+                            setSearchResults([]);
+                        }}
+                        to="/favorites"
+                        className="links"
+                    ></NavLink>
+                </div>
 
 
                 <div>
@@ -34,6 +47,7 @@ const Menu = () => {
                         className="links"
 
                     >
+
                         <h3>Favorites</h3>
                     </NavLink>
                 </div>
