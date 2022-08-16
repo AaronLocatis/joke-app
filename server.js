@@ -14,6 +14,7 @@ const app = express();
 
 //! declaring the port the server will run on
 const PORT = process.env.PORT || 8080
+
 app.enable("trust proxy");
 app.use((req, res, next) => {
     req.secure ? next() : res.redirect("https://" + req.headers.host + req.url);
