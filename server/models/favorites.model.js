@@ -1,14 +1,15 @@
 const query = require("../config/database.config");
 
 async function add(favorite) {
-    let { insertId } = await query("INSERT INTO favorites(joke_id) VALUES (?)", [favorite.joke_id])(
-        [favorite.joke_id]
-    )
-    return { success: true, data: { ...favorite, id: insertId }, error: null };
-} catch (err) {
-    return { success: false, data: null, error: "Something went wrong" };
+    try {
+        let { insertId } = await query("INSERT INTO favorites(joke_id) VALUES (?)", [favorite.joke_id])(
+            [favorite.joke_id]
+        )
+        return { success: true, data: { ...favorite, id: insertId }, error: null };
+    } catch (err) {
+        return { success: false, data: null, error: "Something went wrong" };
+    }
 }
-
 async function remove(joke_id) {
     try {
         //! remove that one

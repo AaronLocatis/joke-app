@@ -7,6 +7,12 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
@@ -15,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "ng build --prod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

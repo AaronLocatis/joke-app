@@ -3,7 +3,7 @@ const router = express.Router();
 const { add, remove } = require("../models/favorites.model");
 
 //! Add - PUT
-router.put("/add", auth, async (req, res) => {
+router.put("/add", async (req, res) => {
     //! Verify the data they gave you is valid
     const favorite = req.body;
     if (!favorite.joke_id) {
@@ -19,7 +19,7 @@ router.put("/add", auth, async (req, res) => {
 });
 
 //! Delete - DELETE
-router.delete("/delete/:joke_id", auth, async (req, res) => {
+router.delete("/delete/:joke_id", async (req, res) => {
     const joke_id = req.params.joke_id;
     const resObj = await remove(joke_id, req.favorite.id);
 
